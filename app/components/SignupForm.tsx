@@ -15,10 +15,9 @@ type Errors = Partial<Record<keyof FormData, string>>;
 
 const EVENT_TYPES = [
   { value: "", label: "행사 종류를 선택해주세요" },
-  { value: "animation", label: "① 프로프즈/식전 애니메이션" },
-  { value: "ai-wedding", label: "② AI 복원 영상 (결혼식)" },
-  { value: "parents", label: "③ 부모님 감사영상 (환갑·고희연 등)" },
-  { value: "other", label: "기타" },
+  { value: "animation", label: "① 프로포즈/식전 애니메이션" },
+  { value: "wedding-parents", label: "② 결혼식 식전/식중 부모님 감사영상" },
+  { value: "family-parents", label: "③ 고희연/가족행사 부모님 감사영상" },
 ];
 
 function formatPhone(value: string): string {
