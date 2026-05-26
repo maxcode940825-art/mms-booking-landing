@@ -89,27 +89,47 @@ export default function SignupForm() {
 
   if (status === "success") {
     return (
-      <div className="card text-center" style={{ padding: "40px 24px" }}>
+      <div className="card" style={{ padding: "40px 24px", textAlign: "center" }}>
         <div style={{ fontSize: 48, marginBottom: 16 }}>✅</div>
         <h2 style={{ fontSize: 22, fontWeight: 700, color: "var(--grey-900)", marginBottom: 8 }}>
-          신청이 완료되었어요!
+          신청이 완료됐어요!
         </h2>
-        <p style={{ fontSize: 15, color: "var(--grey-600)", lineHeight: 1.6, marginBottom: 24 }}>
+        <p style={{ fontSize: 15, color: "var(--grey-600)", lineHeight: 1.6, marginBottom: 28 }}>
           <strong style={{ color: "var(--grey-900)" }}>{form.name}</strong>님,<br />
-          행사일에 맞춰 할인 쿠폰을 순서대로 보내드릴게요.
+          행사 시점에 맞춰 순서대로 안내드릴게요.
         </p>
-        <div style={{
-          background: "var(--toss-blue-light)",
-          borderRadius: 12,
-          padding: "14px 16px",
-          fontSize: 14,
-          color: "var(--toss-blue)",
-          fontWeight: 600,
-        }}>
-          📌 제작 기간은 일주일이에요.<br />
-          <span style={{ fontWeight: 400, color: "var(--grey-600)" }}>
-            쿠폰 받으시면 여유 있게 주문해주세요.
-          </span>
+        <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+          <a
+            href="https://smartstore.naver.com/moving_memories/category/ALL?cp=1"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary"
+            style={{ textDecoration: "none" }}
+          >
+            스마트스토어 구경하기
+          </a>
+          <a
+            href="http://pf.kakao.com/_McxoPn/chat"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              width: "100%",
+              height: 56,
+              background: "#FEE500",
+              color: "#191919",
+              fontSize: 17,
+              fontWeight: 600,
+              border: "none",
+              borderRadius: 16,
+              textDecoration: "none",
+              cursor: "pointer",
+            }}
+          >
+            카카오톡 상담 신청
+          </a>
         </div>
       </div>
     );
