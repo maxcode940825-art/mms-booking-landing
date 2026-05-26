@@ -90,7 +90,12 @@ export default function SignupForm() {
   if (status === "success") {
     return (
       <div className="card" style={{ padding: "40px 24px", textAlign: "center" }}>
-        <div style={{ fontSize: 48, marginBottom: 16 }}>✅</div>
+        <div style={{ display: "flex", justifyContent: "center", marginBottom: 20 }}>
+          <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="36" cy="36" r="36" fill="#3182f6"/>
+            <polyline points="20,37 31,48 52,26" stroke="white" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+          </svg>
+        </div>
         <h2 style={{ fontSize: 22, fontWeight: 700, color: "var(--grey-900)", marginBottom: 8 }}>
           신청이 완료됐어요!
         </h2>
