@@ -44,55 +44,6 @@ export default function Home() {
           <span className="badge">📦 제작 7일 완성</span>
         </div>
 
-        {/* ── 보조 링크 ────────────────────────────────── */}
-        <div style={{
-          display: "flex",
-          gap: 8,
-          marginBottom: 20,
-        }}>
-          <a
-            href="https://smartstore.naver.com/moving_memories/category/ALL?cp=1"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              flex: 1,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              height: 46,
-              background: "#fff",
-              border: "1px solid var(--grey-200)",
-              borderRadius: 14,
-              fontSize: 14,
-              fontWeight: 600,
-              color: "var(--grey-700)",
-              textDecoration: "none",
-            }}
-          >
-            스마트스토어 보기
-          </a>
-          <a
-            href="http://pf.kakao.com/_McxoPn/chat"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              flex: 1,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              height: 46,
-              background: "#FEE500",
-              borderRadius: 14,
-              fontSize: 14,
-              fontWeight: 600,
-              color: "#191919",
-              textDecoration: "none",
-            }}
-          >
-            카카오톡 상담
-          </a>
-        </div>
-
         {/* ── 신청 폼 ──────────────────────────────────── */}
         <SignupForm />
 

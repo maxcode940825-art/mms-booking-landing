@@ -252,7 +252,7 @@ export default function SignupForm() {
           disabled={status === "loading"}
           style={{ marginTop: 4 }}
         >
-          {status === "loading" ? "신청 중..." : "할인 쿠폰 알림 신청하기"}
+          {status === "loading" ? "신청 중..." : "제작 알림 및 쿠폰 신청하기"}
         </button>
 
         {status === "error" && (
