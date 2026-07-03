@@ -15,9 +15,9 @@ type Errors = Partial<Record<keyof FormData, string>>;
 
 const EVENT_TYPES = [
   { value: "", label: "행사 종류를 선택해주세요" },
-  { value: "animation", label: "① 프로포즈/식전 애니메이션" },
-  { value: "wedding-parents", label: "② 결혼식 식전/식중 부모님 감사영상" },
-  { value: "family-parents", label: "③ 고희연/가족행사 부모님 감사영상" },
+  { value: "TYPE1_프로포즈애니메이션", label: "① 프로포즈/식전 애니메이션 영상" },
+  { value: "TYPE2_AI복원영상", label: "② 식전/식중 AI 복원 영상 (폭싹 속았수다 스타일)" },
+  { value: "TYPE3_부모님감사영상", label: "③ 환갑·칠순·팔순 부모님 감사영상" },
 ];
 
 function formatPhone(value: string): string {
@@ -43,7 +43,7 @@ export default function SignupForm() {
     agreeMarketing: false,
   });
   const [errors, setErrors] = useState<Errors>({});
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "success">("idle");
 
   function validate(): Errors {
     const e: Errors = {};
@@ -73,18 +73,12 @@ export default function SignupForm() {
       return;
     }
     setErrors({});
-    setStatus("loading");
-    try {
-      const res = await fetch("/api/submit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-      if (!res.ok) throw new Error();
-      setStatus("success");
-    } catch {
-      setStatus("error");
-    }
+    setStatus("success");
+    fetch("/api/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(form),
+    }).catch(() => {});
   }
 
   if (status === "success") {
@@ -249,17 +243,10 @@ export default function SignupForm() {
         <button
           type="submit"
           className="btn-primary"
-          disabled={status === "loading"}
           style={{ marginTop: 4 }}
         >
-          {status === "loading" ? "신청 중..." : "제작 알림 및 쿠폰 신청하기"}
+          제작 알림 및 쿠폰 신청하기
         </button>
-
-        {status === "error" && (
-          <p className="field-error" style={{ textAlign: "center" }}>
-            오류가 발생했어요. 잠시 후 다시 시도해주세요.
-          </p>
-        )}
 
         <p style={{ fontSize: 12, color: "var(--grey-500)", textAlign: "center", lineHeight: 1.5 }}>
           신청 내용은 언제든 카카오톡 채널로 변경 요청 가능해요.{" "}
